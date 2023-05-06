@@ -1,0 +1,74 @@
+.container {
+    max-width: 140rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.contact_grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .8rem;
+}
+
+.grid_item {
+    width: 25%;
+    padding: 1rem;
+    box-shadow: 0px 0px 6px 3px rgba(199, 199, 199, 0.75);
+}
+
+.grid_item i {
+    color: red;
+    font-size: 2.5rem;
+
+}
+
+.form_item {
+    padding: 1rem;
+    width: 18rem;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0px 0px 6px 3px rgba(228, 228, 228, 0.75);
+    background-color: rgb(219, 219, 219);
+}
+
+.input_field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.input_field:last-child {
+    margin-bottom: 0;
+}
+
+.input_field label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.input_field input,
+.input_field textarea {
+    box-shadow: 0px 0px 2px 2px rgba(196, 196, 196, 0.75);
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px 2px;
+    border-radius: 3px;
+}
+
+.input_field button {
+    border: none;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-size: .8rem;
+    padding: .4rem .3rem;
+}
+
+.input_field button:hover {
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 2px 2px rgba(49, 49, 49, 0.75);
+}
