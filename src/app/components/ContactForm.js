@@ -11,16 +11,17 @@ const ContactForm = () => {
         phoone: "",
         message: ""
     });
-    const [status,setStatus]=useState('');
+    const [status,setStatus]=useState(null);
     function handleChange(e) {
         const name = e.target.name;
         const value = e.target.value;
-        setUser({ ...user, [name]: value })
+        setUser({...user, [name]: value });
 
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
+            'use server'
             const response = await fetch('/api/contact',{
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
@@ -49,8 +50,10 @@ const ContactForm = () => {
     return (
         <form className={styles.form_item} onSubmit={handleSubmit}>
             <div className={styles.input_field}>
-                <label htmlFor='username'>Your Name</label>
-                <input type='text' name='username' id='username' placeholder='Entern Your Name' onChange={handleChange} value={user.username} />
+                <label htmlFor='username'>Your Name
+                    <input type='text' name='username' id='username' placeholder='Entern Your Name' onChange={handleChange} value={user.username} />
+                </label>
+                
             </div>
             <div className={styles.input_field}>
                 <label htmlFor='email'>Your Email</label>
@@ -69,11 +72,8 @@ const ContactForm = () => {
                 {status=="error" && <p>Message not sent,something wrong</p>}
                 <button type='submit'>Send Message</button>
             </div>
-            
-
-
         </form>
-    )
+    );
 }
 
 export default ContactForm;

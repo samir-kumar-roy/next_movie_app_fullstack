@@ -8,11 +8,11 @@ const Movie = async () => {
   // const url = process.env.URL;
   await new Promise(resolve => setTimeout(resolve, 500))
 
-  const url = 'https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en';
+  const url = process.env.URL
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '291360a50cmshf3410b5e8489b62p1b932cjsne95aea38493a',
+      'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
       'X-RapidAPI-Host': 'netflix54.p.rapidapi.com'
     }
   };
@@ -28,7 +28,7 @@ const Movie = async () => {
           <div className={styles.card_section}>
             {
               main_data.map((currElem) => {
-                return <MovieCard key={currElem.id} {...currElem} />
+                return <MovieCard key={currElem.jawSummary.id} {...currElem} />
               })
             }
           </div>

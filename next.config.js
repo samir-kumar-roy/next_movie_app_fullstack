@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    MONGODB_URI: 'mongodb+srv://samir-roy:samir123@cluster0.on2oo96.mongodb.net/movieappDB?retryWrites=true&w=majority'
+  },
   experimental: {
     appDir: true,
   },

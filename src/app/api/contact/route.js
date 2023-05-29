@@ -1,9 +1,9 @@
 import dbConnect from '@/utils/dbconnection';
 import Contact from '@/models/contact';
 import {NextResponse} from 'next/server';
-export async function POST(req,res){
+export async function post(req,res){
     try{
-        const body = JSON.stringify(req.body);
+        const body = await req.json();
         console.log("testinggggg.........",body);
         await dbConnect();
         await Contact.create(body);
